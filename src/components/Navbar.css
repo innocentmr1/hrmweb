@@ -91,6 +91,7 @@
 
 .navbar__menu li {
     position: relative;
+    list-style: none;
 }
 
 .navbar__menu a,

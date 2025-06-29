@@ -133,7 +133,7 @@ function Home() {
               width="220"
               height="80"
               rx="20"
-              fill="#00bfae"
+              fill="#049fff"
               opacity="0.15"
             />
             <rect
@@ -142,7 +142,7 @@ function Home() {
               width="140"
               height="40"
               rx="12"
-              fill="#049fff"
+              fill="#000"
               opacity="0.12"
             />
           </svg>

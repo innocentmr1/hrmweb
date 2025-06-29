@@ -32,12 +32,12 @@
 }
 
 .home-hero__title span {
-    color: #00bfae;
+    color: #049fff;
 }
 
 .home-hero__subtitle {
     font-size: 1.3rem;
-    color: #444;
+    color: #003366;
     margin-bottom: 2.2rem;
     max-width: 500px;
     animation: fadeInUp 1s 0.2s both;
@@ -63,23 +63,23 @@
 }
 
 .home-hero__btn--primary {
-    background: #00bfae;
+    background: #049fff;
     color: #fff;
 }
 
 .home-hero__btn--primary:hover {
-    background: #049fff;
+    background: #02273e;
     color: #fff;
 }
 
 .home-hero__btn--secondary {
     background: #fff;
-    color: #00bfae;
-    border: 2px solid #00bfae;
+    color: #049fff;
+    border: 2px solid #049fff;
 }
 
 .home-hero__btn--secondary:hover {
-    background: #00bfae;
+    background: #049fff;
     color: #fff;
 }
 
@@ -95,7 +95,7 @@
 .home-hero__svg {
     width: 340px;
     height: 260px;
-    animation: float 6s ease-in-out infinite;
+    animation: float 5s ease-in-out infinite;
 }
 
 /* Trusted By Section */
