@@ -114,12 +114,12 @@ function Products() {
   ];
 
   return (
-    <div className="products-page">
+    <div className="products-page seamless-products">
       {/* Hero Section */}
-      <section className="products-hero">
+      <section className="products-hero glassy-bg">
         <div className="products-hero__content">
-          <h1 className="products-hero__title">Our Products</h1>
-          <p className="products-hero__subtitle">
+          <h1 className="products-hero__title fade-in-up">Our Products</h1>
+          <p className="products-hero__subtitle fade-in-up">
             Discover Techpal HR's suite of solutions designed to streamline your
             business operations and elevate the employee experience.
           </p>
@@ -132,7 +132,7 @@ function Products() {
           <div
             key={product.id}
             id={product.id}
-            className="product-section"
+            className="product-section glassy-card fade-in-up"
             style={{ animationDelay: `${index * 0.2}s` }}
           >
             <div className="product-section__content">
@@ -160,7 +160,7 @@ function Products() {
                   {product.features.map((feature, featureIndex) => (
                     <div
                       key={feature}
-                      className="feature-item"
+                      className="feature-item fade-in-up"
                       style={{ animationDelay: `${featureIndex * 0.1}s` }}
                     >
                       <span className="feature-check">✓</span>
@@ -171,10 +171,10 @@ function Products() {
               </div>
 
               <div className="product-section__cta">
-                <Link to="/contact" className="product-cta-btn">
+                <Link to="/contact" className="product-cta-btn cta-primary">
                   Request Demo
                 </Link>
-                <Link to="/pricing" className="product-learn-btn">
+                <Link to="/pricing" className="product-learn-btn cta-secondary">
                   Learn More
                 </Link>
               </div>
@@ -193,28 +193,30 @@ function Products() {
       </section>
 
       {/* Integration Section */}
-      <section className="integration-section">
+      <section className="integration-section glassy-bg">
         <div className="integration-content">
-          <h2>Effortless Integrations</h2>
-          <p>
+          <h2 className="fade-in-up">Effortless Integrations</h2>
+          <p className="fade-in-up">
             Techpal HR integrates smoothly with your existing ERP platforms,
             including Microsoft, Sage, SAP, and Oracle.
           </p>
           <div className="integration-logos">
-            <div className="integration-logo">Microsoft</div>
-            <div className="integration-logo">Sage</div>
-            <div className="integration-logo">SAP</div>
-            <div className="integration-logo">Oracle</div>
+            <div className="integration-logo fade-in-up">Microsoft</div>
+            <div className="integration-logo fade-in-up">Sage</div>
+            <div className="integration-logo fade-in-up">SAP</div>
+            <div className="integration-logo fade-in-up">Oracle</div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="products-cta">
+      <section className="products-cta glassy-bg">
         <div className="products-cta__content">
-          <h2>Ready to Transform Your HR Operations?</h2>
-          <p>Get started with Techpal HR's comprehensive solutions today.</p>
-          <div className="products-cta__buttons">
+          <h2 className="fade-in-up">Ready to Transform Your HR Operations?</h2>
+          <p className="fade-in-up">
+            Get started with Techpal HR's comprehensive solutions today.
+          </p>
+          <div className="products-cta__buttons fade-in-up">
             <Link to="/contact" className="cta-primary">
               Request a Demo
             </Link>

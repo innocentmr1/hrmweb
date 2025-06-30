@@ -1,0 +1,351 @@
+/* Product Detail Page - Modern, Glassy, Animated */
+.product-page {
+    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+    min-height: 100vh;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    color: #1a2233;
+}
+
+.product-hero-full {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(100deg, #4f8cff 0%, #a6e1fa 100%);
+    border-radius: 0 0 2.5rem 2.5rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+.product-hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 3rem;
+}
+
+.product-hero-text {
+    flex: 1;
+    color: #fff;
+    z-index: 2;
+}
+
+.product-hero-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 1.2rem;
+    letter-spacing: -1px;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.12);
+}
+
+.product-hero-subtitle {
+    font-size: 1.5rem;
+    color: #eaf6ff;
+    margin-bottom: 2.2rem;
+    max-width: 500px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+}
+
+.product-hero-cta {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.product-hero-visual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-hero-visual img {
+    width: 340px;
+    max-width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px 0 #4f8cff22;
+    background: #fff;
+}
+
+.cta-primary,
+.cta-secondary {
+    display: inline-block;
+    padding: 0.95rem 2.5rem;
+    border-radius: 2rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    box-shadow: 0 2px 12px 0 #4f8cff22;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+}
+
+.cta-primary {
+    background: #fff;
+    color: #4f8cff;
+}
+
+.cta-primary:hover {
+    background: #eaf6ff;
+    color: #1a2233;
+}
+
+.cta-secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.cta-secondary:hover {
+    background: #fff;
+    color: #4f8cff;
+}
+
+/* Glassy Card Sections */
+.product-features-grid,
+.product-usecases,
+.product-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1rem;
+}
+
+.product-features-grid {
+    margin-top: 0;
+}
+
+.glassy-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+    backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(79, 140, 255, 0.08);
+    animation: cardPop 0.7s cubic-bezier(.4, 2, .6, 1);
+}
+
+.feature-item,
+.usecase-card,
+.benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 12px 0 #4f8cff11;
+    padding: 1.2rem 1.2rem 1rem 1.2rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1.5px solid #e0e7ef;
+}
+
+.feature-item:hover,
+.usecase-card:hover,
+.benefit-card:hover {
+    box-shadow: 0 8px 32px 0 #4f8cff22;
+    transform: translateY(-4px) scale(1.03);
+    border-color: #4f8cff33;
+}
+
+.feature-check,
+.usecase-icon,
+.benefit-icon {
+    font-size: 1.5rem;
+    color: #4f8cff;
+    font-weight: bold;
+}
+
+.usecase-title,
+.benefit-title {
+    font-weight: 700;
+    color: #4f8cff;
+    font-size: 1.1rem;
+}
+
+.usecase-desc,
+.benefit-desc {
+    color: #1a2233;
+    font-size: 1.05rem;
+}
+
+/* Customer Success Stories / Testimonials */
+.product-testimonials {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 2.5rem 1rem 2rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 2rem;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+    text-align: center;
+}
+
+.product-testimonials h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a2233;
+    margin-bottom: 2rem;
+}
+
+.customer-carousel {
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.customer-carousel-track {
+    display: flex;
+    gap: 2rem;
+    min-width: 600px;
+}
+
+.customer-card {
+    min-width: 320px;
+    max-width: 340px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 12px 0 #4f8cff11;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    border: 1.5px solid #e0e7ef;
+    position: relative;
+    animation: cardPop 0.7s cubic-bezier(.4, 2, .6, 1);
+}
+
+.customer-card:hover {
+    box-shadow: 0 8px 32px 0 #4f8cff22;
+    transform: translateY(-4px) scale(1.03);
+    border-color: #4f8cff33;
+}
+
+.customer-avatar img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px #4f8cff22;
+}
+
+.customer-quote {
+    font-size: 1.1rem;
+    color: #1a2233;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.customer-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.customer-company-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #f8fafc;
+    object-fit: contain;
+    box-shadow: 0 1px 4px #4f8cff11;
+}
+
+.customer-name {
+    font-weight: 700;
+    color: #4f8cff;
+    font-size: 1.05rem;
+}
+
+.customer-company {
+    color: #1a2233;
+    font-size: 1rem;
+}
+
+/* CTA Section */
+.product-cta {
+    background: linear-gradient(90deg, #4f8cff 0%, #6be1fc 100%);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px 0 #4f8cff22;
+    margin: 2.5rem auto 2rem auto;
+    max-width: 900px;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+.product-cta a {
+    margin: 0 0.7rem;
+}
+
+@keyframes cardPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.92) translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: cardPop 0.8s cubic-bezier(.4, 2, .6, 1) both;
+}
+
+@media (max-width: 900px) {
+    .product-hero-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .product-hero-visual {
+        margin-top: 2rem;
+    }
+
+    .product-features-grid,
+    .product-usecases,
+    .product-benefits {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .customer-carousel-track {
+        min-width: 0;
+        gap: 1rem;
+    }
+
+    .customer-card {
+        min-width: 220px;
+        max-width: 100%;
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-hero-title {
+        font-size: 2.1rem;
+    }
+
+    .product-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .product-cta {
+        padding: 1rem 0.2rem 0.7rem 0.2rem;
+    }
+}

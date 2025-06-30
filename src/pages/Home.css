@@ -10,10 +10,13 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    min-height: 90vh;
-    padding: 4rem 2rem 2rem 2rem;
+    min-height: 100vh;
+    padding: 4rem 2vw 2rem 2vw;
     background: linear-gradient(135deg, #f2f7f6 60%, #e6f7fa 100%);
     position: relative;
+    width: auto;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .home-hero__content {
@@ -283,9 +286,12 @@
 
 /* Case Studies/Testimonials Section */
 .home-case-studies {
-    padding: 5rem 2rem 2rem 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 2rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+    padding: 4rem 1rem 2rem 1rem;
+    margin: 3rem auto 2rem auto;
     max-width: 1200px;
-    margin: 0 auto;
 }
 
 .home-case-studies__title {
@@ -299,48 +305,78 @@
 .home-case-studies__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2.5rem;
+    gap: 2rem;
+    padding-bottom: 0;
+    scroll-snap-type: none;
+    overflow-x: unset;
 }
 
 .home-case-card {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-    padding: 2.5rem 2rem 2rem 2rem;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 12px 0 #4f8cff11;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
     display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    min-height: 220px;
-    animation: fadeInUp 1s;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    border: 1.5px solid #e0e7ef;
+    position: relative;
+    animation: fadeInUp 0.8s cubic-bezier(.4, 2, .6, 1) both;
+    scroll-snap-align: start;
+}
+
+.home-case-card:hover {
+    box-shadow: 0 8px 32px 0 #4f8cff22;
+    transform: translateY(-4px) scale(1.03);
+    border-color: #4f8cff33;
 }
 
 .home-case-card__image {
-    font-size: 2.5rem;
-    margin-right: 1.2rem;
-    flex-shrink: 0;
-}
-
-.home-case-card__content {
-    flex: 1;
-}
-
-.home-case-card__title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #003366;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 0.5rem;
-}
-
-.home-case-card__desc {
-    color: #666;
-    font-size: 1rem;
-    margin-bottom: 0.7rem;
+    box-shadow: 0 2px 8px #4f8cff22;
 }
 
 .home-case-card__quote {
-    color: #00bfae;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: #1a2233;
     font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.home-case-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.home-case-card__logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: #f8fafc;
+    object-fit: contain;
+    box-shadow: 0 1px 4px #4f8cff11;
+}
+
+.home-case-card__name {
+    font-weight: 700;
+    color: #4f8cff;
+    font-size: 1.05rem;
+}
+
+.home-case-card__company {
+    color: #1a2233;
+    font-size: 1rem;
 }
 
 /* CTA Section */
@@ -412,56 +448,279 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+
+    .home-products,
+    .home-features,
+    .home-case-studies {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
 @media (max-width: 900px) {
     .home-hero {
         flex-direction: column;
-        padding: 3rem 1rem 1rem 1rem;
-        min-height: 70vh;
-    }
-
-    .home-hero__content {
+        padding: 2rem 1rem 1rem 1rem;
+        min-height: 60vh;
+        width: 100%;
         max-width: 100%;
-        text-align: center;
-        margin-bottom: 2rem;
     }
 
+    .home-hero__content,
     .home-hero__visual {
-        min-width: 220px;
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
         margin: 0 auto;
+        text-align: center;
     }
 
     .home-products,
     .home-features,
     .home-case-studies {
-        padding: 3rem 1rem 1rem 1rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .home-hero__title {
-        font-size: 2.1rem;
-    }
-
-    .home-products__title,
-    .home-case-studies__title,
-    .home-cta__content h2 {
-        font-size: 1.3rem;
+        padding: 2rem 0.5rem 1rem 0.5rem;
+        max-width: 100%;
+        width: 100%;
     }
 
     .home-products__grid,
     .home-features__grid,
     .home-case-studies__grid {
         grid-template-columns: 1fr;
-        gap: 1.2rem;
+        gap: 1rem;
+        width: 100%;
     }
 
     .home-product-card,
     .home-case-card {
-        padding: 1.2rem 1rem;
-        min-height: 220px;
+        padding: 1rem 0.5rem;
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
     }
 
     .home-cta {
-        padding: 2rem 1rem;
+        padding: 1.5rem 0.5rem;
+        max-width: 100%;
+        width: 100%;
     }
+}
+
+@media (max-width: 700px) {
+    .home-hero__title {
+        font-size: 1.7rem;
+    }
+
+    .home-products__title,
+    .home-case-studies__title,
+    .home-cta__content h2 {
+        font-size: 1.1rem;
+    }
+
+    .home-products__grid,
+    .home-features__grid,
+    .home-case-studies__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .home-product-card,
+    .home-case-card {
+        padding: 1rem 0.5rem;
+        min-height: 180px;
+    }
+
+    .home-cta {
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .home-hero {
+        min-height: 40vh;
+        padding: 1rem 0.2rem 1rem 0.2rem;
+    }
+
+    .home-hero__title {
+        font-size: 1.1rem;
+    }
+
+    .home-products__title,
+    .home-case-studies__title,
+    .home-cta__content h2 {
+        font-size: 1rem;
+    }
+
+    .home-products__grid,
+    .home-features__grid,
+    .home-case-studies__grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .home-product-card,
+    .home-case-card {
+        padding: 0.7rem 0.2rem;
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .home-cta {
+        padding: 1rem 0.2rem;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .home-case-studies {
+        padding: 2rem 0.2rem 1rem 0.2rem;
+    }
+
+    .home-case-studies__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-hero {
+        flex-direction: column;
+        min-height: 30vh;
+        padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .home-hero__content,
+    .home-hero__visual {
+        max-width: 100%;
+        min-width: 0;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .home-hero__visual {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .home-hero__svg,
+    .home-hero__visual img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .home-products,
+    .home-features,
+    .home-case-studies {
+        padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .home-products__grid,
+    .home-features__grid,
+    .home-case-studies__grid {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+        width: 100%;
+    }
+
+    .home-product-card,
+    .home-case-card {
+        padding: 0.5rem 0.2rem;
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .home-cta {
+        padding: 0.5rem 0.2rem;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s both;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 1s both;
+}
+
+.fade-in-right {
+    animation: fadeInRight 1s both;
+}
+
+.bounce-in {
+    animation: bounceIn 1s both;
+}
+
+html,
+body,
+.seamless-home {
+    box-sizing: border-box;
+}
+
+body,
+.seamless-home {
+    overflow-x: hidden;
 }

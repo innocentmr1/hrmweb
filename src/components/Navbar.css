@@ -133,7 +133,7 @@
     border-radius: 16px;
     padding: 0.5rem 0;
     flex-direction: column;
-    z-index: 1001;
+    z-index: 9999;
     animation: fadeInDown 0.2s;
     border: 1px solid #e5e7eb;
 }

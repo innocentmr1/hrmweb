@@ -1,17 +1,33 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const dropdownTimeout = useRef(null);
+
+  // Handlers for desktop hover
+  const handleDropdownEnter = () => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setProductsOpen(true);
+  };
+  const handleDropdownLeave = () => {
+    dropdownTimeout.current = setTimeout(() => setProductsOpen(false), 120);
+  };
+
+  // Handler for click/tap (mobile)
+  const handleDropdownClick = (e) => {
+    e.preventDefault();
+    setProductsOpen((open) => !open);
+  };
 
   return (
     <nav className="navbar seamless-navbar">
       <div className="navbar__container">
         <div className="navbar__logo">
           <Link to="/">
-          <h2>TechPal</h2>
+            <h2>TechPal</h2>
             {/* <img
               src="/logo.svg"
               alt=" Logo"
@@ -39,12 +55,19 @@ function Navbar() {
           </li> */}
           <li
             className="navbar__dropdown"
-            onMouseEnter={() => setProductsOpen(true)}
-            onMouseLeave={() => setProductsOpen(false)}
+            onMouseEnter={handleDropdownEnter}
+            onMouseLeave={handleDropdownLeave}
           >
             <span
               className="navbar__dropdown-label"
-              onClick={() => setProductsOpen(!productsOpen)}
+              onClick={handleDropdownClick}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") handleDropdownClick(e);
+              }}
+              aria-haspopup="true"
+              aria-expanded={productsOpen}
+              role="button"
             >
               Products <span className="navbar__dropdown-arrow">▼</span>
             </span>
@@ -52,6 +75,9 @@ function Navbar() {
               className={`navbar__dropdown-menu${
                 productsOpen ? " navbar__dropdown-menu--open" : ""
               }`}
+              onMouseEnter={handleDropdownEnter}
+              onMouseLeave={handleDropdownLeave}
+              style={{ pointerEvents: productsOpen ? "auto" : "none" }}
             >
               <li>
                 <NavLink to="/hrms">HRMS</NavLink>
@@ -85,7 +111,7 @@ function Navbar() {
           <li>
             <NavLink to="/pricing">Pricing</NavLink>
           </li>
-      
+
           <li>
             <NavLink to="/partnership">Partnership</NavLink>
           </li>

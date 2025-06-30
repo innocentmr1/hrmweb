@@ -227,19 +227,56 @@ function Home() {
         </div>
       </section>
 
-      {/* Case Studies/Testimonials Section */}
+      {/* Customer Success Stories / Case Studies */}
       <section className="home-case-studies">
-        <h2 className="home-case-studies__title">Customer Success Stories</h2>
+        <h2 className="home-case-studies__title fade-in-up">
+          Customer Success Stories
+        </h2>
         <div className="home-case-studies__grid">
-          {caseStudies.map((study) => (
-            <div className="home-case-card" key={study.title}>
-              <div className="home-case-card__image">{study.image}</div>
-              <div className="home-case-card__content">
-                <h3 className="home-case-card__title">{study.title}</h3>
-                <p className="home-case-card__desc">{study.description}</p>
-                <span className="home-case-card__quote">
-                  “Techpal HR made our HR processes seamless and efficient!”
-                </span>
+          {[
+            {
+              avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+              logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+              name: "Samuel O.",
+              company: "TGI Group",
+              quote:
+                "Techpal HR made our onboarding process 3x faster and our data is always up to date.",
+            },
+            {
+              avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+              logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+              name: "Jane D.",
+              company: "Afya Care",
+              quote:
+                "We love the analytics and the ease of managing employee records in one place.",
+            },
+            {
+              avatar: "https://randomuser.me/api/portraits/men/65.jpg",
+              logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+              name: "Michael B.",
+              company: "Tangerine Africa",
+              quote: "Our HR team is now more productive than ever!",
+            },
+          ].map((story, idx) => (
+            <div
+              className="home-case-card fade-in-up"
+              key={story.name}
+              style={{ animationDelay: `${idx * 0.15}s` }}
+            >
+              <img
+                className="home-case-card__image"
+                src={story.avatar}
+                alt="Customer"
+              />
+              <div className="home-case-card__quote">“{story.quote}”</div>
+              <div className="home-case-card__meta">
+                <img
+                  className="home-case-card__logo"
+                  src={story.logo}
+                  alt="Company Logo"
+                />
+                <div className="home-case-card__name">{story.name}</div>
+                <div className="home-case-card__company">{story.company}</div>
               </div>
             </div>
           ))}
