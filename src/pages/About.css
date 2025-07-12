@@ -741,7 +741,17 @@
 
 @media (max-width: 600px) {
 
-    .about-mission-banner,
+    .about-mission-banner {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        box-sizing: border-box;
+    }
+
     .about-mission-minimal,
     .about-mission-timeline,
     .about-hero-modern__content,
@@ -750,9 +760,14 @@
     .about-team-modern__grid,
     .about-testimonials-modern__grid,
     .about-clients-modern__logos {
+        min-width: 0 !important;
+        min-height: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
+        box-sizing: border-box;
     }
 }
