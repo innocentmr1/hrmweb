@@ -169,8 +169,14 @@ function Navbar() {
               Contact
             </NavLink>
           </li>
+          <li className="navbar__mobile-cta">
+            <Link to="/request-demo" className="navbar__demo-btn navbar__link">
+              Request a Demo
+            </Link>
+          </li>
         </ul>
-        <div className="navbar__cta">
+        {/* Remove the separate CTA div for mobile */}
+        <div className="navbar__cta navbar__cta--desktop">
           <Link to="/request-demo" className="navbar__demo-btn navbar__link">
             Request a Demo
           </Link>

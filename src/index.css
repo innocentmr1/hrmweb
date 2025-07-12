@@ -117,10 +117,6 @@ canvas {
     margin: 0 !important;
     padding: 0 !important;
     position: relative !important;
-    font-size: 15px !important;
-    line-height: 1.6 !important;
-    background: #f8fafc !important;
-    color: #1a2233 !important;
   }
 
   * {
@@ -146,59 +142,5 @@ canvas {
     padding-left: 0 !important;
     padding-right: 0 !important;
     overflow-x: hidden !important;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 800 !important;
-    margin-top: 1.2em !important;
-    margin-bottom: 0.6em !important;
-    line-height: 1.2 !important;
-  }
-
-  h1 {
-    font-size: 2rem !important;
-  }
-
-  h2 {
-    font-size: 1.5rem !important;
-  }
-
-  h3 {
-    font-size: 1.2rem !important;
-  }
-
-  p,
-  li,
-  a,
-  span,
-  label,
-  input,
-  button {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-  }
-
-  section,
-  article,
-  .container,
-  .page-container,
-  .main-content,
-  .section,
-  .content-wrapper {
-    padding: 1.2rem 1rem !important;
-    margin: 0 auto 1.2rem auto !important;
-    border-radius: 1.2rem !important;
-    background: #fff !important;
-    box-shadow: 0 2px 12px rgba(4, 159, 255, 0.04) !important;
-  }
-
-  ul,
-  ol {
-    padding-left: 1.2em !important;
   }
 }

@@ -230,33 +230,21 @@
         display: flex;
     }
 
-    .navbar__cta {
-        margin: 1rem 0 0 0;
+    .navbar__cta--desktop {
+        display: none;
+    }
+
+    .navbar__mobile-cta {
+        margin-top: 1rem;
         width: 100%;
         display: flex;
-        justify-content: flex-end;
-    }
-}
-
-@media (max-width: 600px) {
-    .navbar__container {
-        padding: 1rem !important;
-        height: auto !important;
+        justify-content: center;
     }
 
-    .navbar__menu a,
-    .navbar__dropdown-label,
-    .navbar__demo-btn {
-        font-size: 1.1rem !important;
-        padding: 0.8rem 1.2rem !important;
-        border-radius: 0.8rem !important;
-        margin: 0.2rem 0 !important;
-    }
-
-    .navbar__toggle {
-        width: 44px !important;
-        height: 44px !important;
-        padding: 0.5rem !important;
+    .navbar__mobile-cta .navbar__demo-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1.5rem;
     }
 }
 
