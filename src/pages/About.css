@@ -204,7 +204,7 @@
 }
 
 .team-card__role {
-    color: #00bfae;
+    color: #049fff;
     font-weight: 600;
     margin-bottom: 1rem;
 }
@@ -241,7 +241,7 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background: #00bfae;
+    background: #049fff;
     transform: translateX(-50%);
 }
 
@@ -271,17 +271,17 @@
     top: 0;
     width: 20px;
     height: 20px;
-    background: #00bfae;
+    background: #049fff;
     border-radius: 50%;
     transform: translateX(-50%);
     border: 4px solid white;
-    box-shadow: 0 0 0 4px #00bfae;
+    box-shadow: 0 0 0 4px #049fff;
 }
 
 .timeline-year {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #00bfae;
+    color: #049fff;
     margin-bottom: 0.5rem;
 }
 
@@ -358,7 +358,7 @@
 }
 
 .career-btn {
-    background: #00bfae;
+    background: #049fff;
     color: #003366;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
@@ -420,7 +420,7 @@
 }
 
 .press-link {
-    color: #00bfae;
+    color: #049fff;
     text-decoration: none;
     font-weight: 600;
 }
@@ -471,7 +471,7 @@
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #00bfae;
+    color: #049fff;
     margin-bottom: 0.5rem;
 }
 
@@ -481,7 +481,7 @@
 }
 
 .impact-btn {
-    background: #00bfae;
+    background: #049fff;
     color: #003366;
     padding: 1rem 2rem;
     border-radius: 25px;
@@ -526,7 +526,7 @@
 }
 
 .cta-primary {
-    background: #00bfae;
+    background: #049fff;
     color: #003366;
     padding: 1rem 2rem;
     border-radius: 25px;

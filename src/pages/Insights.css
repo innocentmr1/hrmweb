@@ -73,7 +73,7 @@
 }
 
 .blog-category {
-    background: #00bfae;
+    background: #049fff;
     color: #003366;
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
@@ -107,7 +107,7 @@
 }
 
 .blog-author {
-    color: #00bfae;
+    color: #049fff;
     font-weight: 600;
 }
 
@@ -123,7 +123,7 @@
 }
 
 .blog-read-more:hover {
-    color: #00bfae;
+    color: #049fff;
 }
 
 .blog-cta {
@@ -132,7 +132,7 @@
 }
 
 .blog-btn {
-    background: #00bfae;
+    background: #049fff;
     color: #003366;
     padding: 1rem 2rem;
     border-radius: 25px;
@@ -211,7 +211,7 @@
 }
 
 .event-date {
-    color: #00bfae;
+    color: #049fff;
     font-weight: 600;
 }
 
@@ -313,7 +313,7 @@
 }
 
 .ebook-pages {
-    color: #00bfae;
+    color: #049fff;
     font-weight: 600;
 }
 
@@ -322,7 +322,7 @@
 }
 
 .ebook-download {
-    background: #00bfae;
+    background: #049fff;
     color: #003366;
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
@@ -457,7 +457,7 @@
 }
 
 .newsletter-btn {
-    background: #00bfae;
+    background: #049fff;
     color: #003366;
     padding: 1rem 2rem;
     border: none;
@@ -501,7 +501,7 @@
 }
 
 .cta-primary {
-    background: #00bfae;
+    background: #049fff;
     color: #003366;
     padding: 1rem 2rem;
     border-radius: 25px;

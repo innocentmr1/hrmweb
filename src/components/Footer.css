@@ -33,7 +33,7 @@
 }
 
 .footer-brand-accent {
-    color: #00bfae;
+    color: #049fff;
 }
 
 .footer-description {
@@ -55,7 +55,7 @@
 }
 
 .social-link:hover {
-    color: #00bfae;
+    color: #049fff;
 }
 
 .footer-links {
@@ -89,7 +89,7 @@
 }
 
 .footer-section a:hover {
-    color: #00bfae;
+    color: #049fff;
 }
 
 /* Office Locations */
@@ -149,7 +149,7 @@
 }
 
 .newsletter-btn {
-    background: #00bfae;
+    background: #049fff;
     color: #003366;
     padding: 0.75rem 1.5rem;
     border: none;
@@ -199,7 +199,7 @@
 }
 
 .footer-legal a:hover {
-    color: #00bfae;
+    color: #049fff;
 }
 
 /* Responsive Design */
@@ -424,4 +424,24 @@
     .footer__brand {
         margin-bottom: 1.5rem;
     }
+}
+
+.footer__demo-btn {
+    background: #049fff;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 191, 174, 0.08);
+    display: inline-block;
+    margin-top: 1.2rem;
+}
+
+.footer__demo-btn:hover {
+    background: #fff;
+    color: #049fff;
+    box-shadow: 0 4px 6px rgba(15, 15, 15, 0.16);
 }

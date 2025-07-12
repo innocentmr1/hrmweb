@@ -26,7 +26,7 @@ function Navbar() {
     <nav className="navbar seamless-navbar">
       <div className="navbar__container">
         <div className="navbar__logo">
-          <Link to="/">
+          <Link to="/" className="navbar__link">
             <h2>TechPal</h2>
             {/* <img
               src="/logo.svg"
@@ -80,27 +80,63 @@ function Navbar() {
               style={{ pointerEvents: productsOpen ? "auto" : "none" }}
             >
               <li>
-                <NavLink to="/hrms">HRMS</NavLink>
+                <NavLink
+                  to="/hrms"
+                  className="navbar__link navbar__link-underline"
+                >
+                  HRMS
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/performance">Performance</NavLink>
+                <NavLink
+                  to="/performance"
+                  className="navbar__link navbar__link-underline"
+                >
+                  {" "}
+                  Performance
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/time-management">Time Management</NavLink>
+                <NavLink
+                  to="/payroll"
+                  className="navbar__link navbar__link-underline"
+                >
+                  Payroll
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/payroll">Payroll</NavLink>
+                <NavLink
+                  to="/employee-benefits"
+                  className="navbar__link navbar__link-underline"
+                >
+                  Employee Benefits
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/recruitment">Recruitment</NavLink>
+                <NavLink
+                  to="/recruitment"
+                  className="navbar__link navbar__link-underline"
+                >
+                  Recruitment
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/employee-benefits">Employee Benefits</NavLink>
+                <NavLink
+                  to="/time-management"
+                  className="navbar__link navbar__link-underline"
+                >
+                  Time Management
+                </NavLink>
               </li>
             </ul>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink
+              to="/about"
+              className="navbar__link navbar__link-underline"
+            >
+              About
+            </NavLink>
           </li>
           {/* <li>
             <NavLink to="/solutions">Solutions</NavLink>
@@ -109,18 +145,33 @@ function Navbar() {
             <NavLink to="/resources">Resources</NavLink>
           </li> */}
           <li>
-            <NavLink to="/pricing">Pricing</NavLink>
+            <NavLink
+              to="/pricing"
+              className="navbar__link navbar__link-underline"
+            >
+              Pricing
+            </NavLink>
           </li>
 
           <li>
-            <NavLink to="/partnership">Partnership</NavLink>
+            <NavLink
+              to="/partnership"
+              className="navbar__link navbar__link-underline"
+            >
+              Partnership
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink
+              to="/contact"
+              className="navbar__link navbar__link-underline"
+            >
+              Contact
+            </NavLink>
           </li>
         </ul>
         <div className="navbar__cta">
-          <Link to="/request-demo" className="navbar__demo-btn">
+          <Link to="/request-demo" className="navbar__demo-btn navbar__link">
             Request a Demo
           </Link>
         </div>

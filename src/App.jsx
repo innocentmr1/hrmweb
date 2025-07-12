@@ -32,7 +32,8 @@ import Terms from "./pages/Terms";
 import Sitemap from "./pages/Sitemap";
 import RequestDemo from "./pages/RequestDemo";
 import "./styles/main.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Loader from "./components/Loader";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -43,6 +44,12 @@ function ScrollToTop() {
 }
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 6000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (loading) return <Loader />;
   return (
     <Router>
       <ScrollToTop />

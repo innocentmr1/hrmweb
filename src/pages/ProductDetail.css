@@ -1,19 +1,20 @@
-/* Product Detail Page - Modern, Glassy, Animated */
+/* --- Product Detail Page: Clean Modern Redesign --- */
+
 .product-page {
-    background: linear-gradient(120deg, #f8fafc 0%, #e0e7ef 100%);
+    background: #f6f8fa;
     min-height: 100vh;
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     color: #1a2233;
 }
 
 .product-hero-full {
-    min-height: 70vh;
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(100deg, #4f8cff 0%, #a6e1fa 100%);
+    background: #fff;
     border-radius: 0 0 2.5rem 2.5rem;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+    box-shadow: 0 6px 32px 0 rgba(31, 38, 135, 0.08);
     margin-bottom: 2.5rem;
     position: relative;
     overflow: hidden;
@@ -31,24 +32,22 @@
 
 .product-hero-text {
     flex: 1;
-    color: #fff;
+    color: #003366;
     z-index: 2;
 }
 
 .product-hero-title {
-    font-size: 3.2rem;
-    font-weight: 900;
+    font-size: 2.8rem;
+    font-weight: 800;
     margin-bottom: 1.2rem;
     letter-spacing: -1px;
-    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.12);
 }
 
 .product-hero-subtitle {
-    font-size: 1.5rem;
-    color: #eaf6ff;
-    margin-bottom: 2.2rem;
+    font-size: 1.3rem;
+    color: #4f8cff;
+    margin-bottom: 2rem;
     max-width: 500px;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 }
 
 .product-hero-cta {
@@ -64,22 +63,22 @@
 }
 
 .product-hero-visual img {
-    width: 340px;
+    width: 320px;
     max-width: 100%;
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px 0 #4f8cff22;
-    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px 0 #4f8cff11;
+    background: #f6f8fa;
 }
 
 .cta-primary,
 .cta-secondary {
     display: inline-block;
-    padding: 0.95rem 2.5rem;
+    padding: 0.9rem 2.2rem;
     border-radius: 2rem;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    box-shadow: 0 2px 12px 0 #4f8cff22;
-    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    box-shadow: 0 2px 8px 0 #4f8cff11;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.15s;
     border: none;
     cursor: pointer;
     outline: none;
@@ -87,33 +86,37 @@
 }
 
 .cta-primary {
-    background: #fff;
-    color: #4f8cff;
+    background: #4f8cff;
+    color: #fff;
 }
 
 .cta-primary:hover {
-    background: #eaf6ff;
-    color: #1a2233;
+    background: #003366;
+    color: #fff;
+    box-shadow: 0 4px 16px 0 #00336622;
+    transform: translateY(-2px) scale(1.03);
 }
 
 .cta-secondary {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
+    background: #fff;
+    color: #4f8cff;
+    border: 2px solid #4f8cff;
 }
 
 .cta-secondary:hover {
-    background: #fff;
-    color: #4f8cff;
+    background: #4f8cff;
+    color: #fff;
+    box-shadow: 0 4px 16px 0 #4f8cff22;
+    transform: translateY(-2px) scale(1.03);
 }
 
-/* Glassy Card Sections */
+/* --- Features, Use Cases, Benefits --- */
 .product-features-grid,
 .product-usecases,
 .product-benefits {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     max-width: 1100px;
     margin: 2.5rem auto;
     padding: 0 1rem;
@@ -123,32 +126,19 @@
     margin-top: 0;
 }
 
-.glassy-card {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-    padding: 2.2rem 1.5rem 1.5rem 1.5rem;
-    backdrop-filter: blur(8px);
-    border: 1.5px solid rgba(79, 140, 255, 0.08);
-    animation: cardPop 0.7s cubic-bezier(.4, 2, .6, 1);
-}
-
+.glassy-card,
 .feature-item,
 .usecase-card,
 .benefit-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.7rem;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 1.2rem;
+    background: #fff;
+    border-radius: 1.5rem;
     box-shadow: 0 2px 12px 0 #4f8cff11;
-    padding: 1.2rem 1.2rem 1rem 1.2rem;
-    transition: box-shadow 0.2s, transform 0.2s;
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+    border: 1.5px solid #e0e7ef;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    border: 1.5px solid #e0e7ef;
 }
 
 .feature-item:hover,
@@ -162,7 +152,7 @@
 .feature-check,
 .usecase-icon,
 .benefit-icon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #4f8cff;
     font-weight: bold;
 }
@@ -170,31 +160,31 @@
 .usecase-title,
 .benefit-title {
     font-weight: 700;
-    color: #4f8cff;
-    font-size: 1.1rem;
+    color: #003366;
+    font-size: 1.08rem;
 }
 
 .usecase-desc,
 .benefit-desc {
     color: #1a2233;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
 }
 
-/* Customer Success Stories / Testimonials */
+/* --- Testimonials --- */
 .product-testimonials {
     max-width: 1100px;
     margin: 2.5rem auto;
-    padding: 2.5rem 1rem 2rem 1rem;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 2rem;
-    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.10);
+    padding: 2.2rem 1rem 1.7rem 1rem;
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 12px 0 #4f8cff11;
     text-align: center;
 }
 
 .product-testimonials h2 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 800;
-    color: #1a2233;
+    color: #003366;
     margin-bottom: 2rem;
 }
 
@@ -205,25 +195,24 @@
 
 .customer-carousel-track {
     display: flex;
-    gap: 2rem;
+    gap: 1.2rem;
     min-width: 600px;
 }
 
 .customer-card {
-    min-width: 320px;
-    max-width: 340px;
-    background: rgba(255, 255, 255, 0.95);
+    min-width: 260px;
+    max-width: 320px;
+    background: #f6f8fa;
     border-radius: 1.2rem;
     box-shadow: 0 2px 12px 0 #4f8cff11;
-    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    padding: 1.2rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    transition: box-shadow 0.2s, transform 0.2s;
+    gap: 0.7rem;
+    transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
     border: 1.5px solid #e0e7ef;
     position: relative;
-    animation: cardPop 0.7s cubic-bezier(.4, 2, .6, 1);
 }
 
 .customer-card:hover {
@@ -233,16 +222,16 @@
 }
 
 .customer-avatar img {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 0.5rem;
-    box-shadow: 0 2px 8px #4f8cff22;
+    box-shadow: 0 2px 8px #4f8cff11;
 }
 
 .customer-quote {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #1a2233;
     font-style: italic;
     margin-bottom: 0.5rem;
@@ -251,12 +240,12 @@
 .customer-meta {
     display: flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.5rem;
 }
 
 .customer-company-logo {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 8px;
     background: #f8fafc;
     object-fit: contain;
@@ -266,22 +255,22 @@
 .customer-name {
     font-weight: 700;
     color: #4f8cff;
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
 
 .customer-company {
     color: #1a2233;
-    font-size: 1rem;
+    font-size: 0.98rem;
 }
 
-/* CTA Section */
+/* --- CTA Section --- */
 .product-cta {
-    background: linear-gradient(90deg, #4f8cff 0%, #6be1fc 100%);
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px 0 #4f8cff22;
+    background: #4f8cff;
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 12px 0 #4f8cff22;
     margin: 2.5rem auto 2rem auto;
     max-width: 900px;
-    padding: 2.5rem 1.5rem 2rem 1.5rem;
+    padding: 2rem 1.2rem 1.2rem 1.2rem;
     text-align: center;
     color: #fff;
 }
@@ -290,22 +279,7 @@
     margin: 0 0.7rem;
 }
 
-@keyframes cardPop {
-    0% {
-        opacity: 0;
-        transform: scale(0.92) translateY(40px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-
-.fade-in-up {
-    animation: cardPop 0.8s cubic-bezier(.4, 2, .6, 1) both;
-}
-
+/* --- Responsive Design --- */
 @media (max-width: 900px) {
     .product-hero-content {
         flex-direction: column;
@@ -326,23 +300,23 @@
 
     .customer-carousel-track {
         min-width: 0;
-        gap: 1rem;
+        gap: 0.7rem;
     }
 
     .customer-card {
-        min-width: 220px;
+        min-width: 180px;
         max-width: 100%;
-        padding: 1.2rem 0.7rem 1rem 0.7rem;
+        padding: 1rem 0.5rem 0.7rem 0.5rem;
     }
 }
 
 @media (max-width: 600px) {
     .product-hero-title {
-        font-size: 2.1rem;
+        font-size: 1.5rem;
     }
 
     .product-hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.98rem;
     }
 
     .product-cta {
