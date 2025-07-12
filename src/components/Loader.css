@@ -375,6 +375,11 @@
     position: fixed !important;
     margin: 0 !important;
     padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, #049fff 0%, #e6f7fa 100%) !important;
   }
 
   .loader-animated-text {
@@ -383,13 +388,21 @@
     text-align: center !important;
     word-break: break-word !important;
     max-width: 90vw !important;
+    margin-bottom: 1.2rem !important;
+    font-weight: 900 !important;
   }
 
   .loader-sub-text {
     font-size: 1rem !important;
-    margin-top: 1rem !important;
+    margin-top: 0.5rem !important;
     text-align: center !important;
     word-break: break-word !important;
     max-width: 90vw !important;
+    color: #003366 !important;
+    font-weight: 500 !important;
+  }
+
+  .loader-particles {
+    display: none !important;
   }
 }

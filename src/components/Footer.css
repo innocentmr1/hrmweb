@@ -466,21 +466,29 @@
 
 @media (max-width: 600px) {
 
-    .footer-main,
-    .footer-links,
-    .footer-offices,
-    .footer-bottom,
-    .footer-bottom-content,
-    .footer-legal,
-    .seamless-footer,
     .footer__container,
+    .footer-main,
     .footer__top,
     .footer__links,
     .footer__brand,
     .footer__bottom {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        padding: 1.2rem 1rem !important;
+        font-size: 1rem !important;
+        border-radius: 1.2rem !important;
+        background: #fff !important;
+        box-shadow: 0 2px 12px rgba(4, 159, 255, 0.04) !important;
+    }
+
+    .footer__section a,
+    .footer-legal a,
+    .footer__social-icon {
+        font-size: 1.1rem !important;
+        padding: 0.7rem 1rem !important;
+        margin: 0.3rem 0 !important;
+        border-radius: 0.8rem !important;
+    }
+
+    .footer__social {
+        gap: 1.2rem !important;
     }
 }

@@ -238,6 +238,28 @@
     }
 }
 
+@media (max-width: 600px) {
+    .navbar__container {
+        padding: 1rem !important;
+        height: auto !important;
+    }
+
+    .navbar__menu a,
+    .navbar__dropdown-label,
+    .navbar__demo-btn {
+        font-size: 1.1rem !important;
+        padding: 0.8rem 1.2rem !important;
+        border-radius: 0.8rem !important;
+        margin: 0.2rem 0 !important;
+    }
+
+    .navbar__toggle {
+        width: 44px !important;
+        height: 44px !important;
+        padding: 0.5rem !important;
+    }
+}
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
