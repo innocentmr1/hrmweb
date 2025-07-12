@@ -723,3 +723,36 @@
         font-size: 1rem;
     }
 }
+
+.about-mission-banner,
+.about-mission-minimal,
+.about-mission-timeline,
+.about-hero-modern__content,
+.about-mission-modern,
+.about-stats-modern,
+.about-team-modern__grid,
+.about-testimonials-modern__grid,
+.about-clients-modern__logos {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+@media (max-width: 600px) {
+
+    .about-mission-banner,
+    .about-mission-minimal,
+    .about-mission-timeline,
+    .about-hero-modern__content,
+    .about-mission-modern,
+    .about-stats-modern,
+    .about-team-modern__grid,
+    .about-testimonials-modern__grid,
+    .about-clients-modern__logos {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}

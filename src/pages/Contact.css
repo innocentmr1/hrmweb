@@ -1112,3 +1112,42 @@
         font-size: 0.85rem;
     }
 }
+
+.contact-main-split,
+.contact-main-left,
+.contact-main-right,
+.contact-methods-grid,
+.contact-method-card,
+.contact-map-illustration,
+.redesigned-contact-main,
+.contact-form-card,
+.contact-methods-card,
+.redesigned-contact-hero,
+.contact-help-section,
+.help-cards-grid {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+@media (max-width: 600px) {
+
+    .contact-main-split,
+    .contact-main-left,
+    .contact-main-right,
+    .contact-methods-grid,
+    .contact-method-card,
+    .contact-map-illustration,
+    .redesigned-contact-main,
+    .contact-form-card,
+    .contact-methods-card,
+    .redesigned-contact-hero,
+    .contact-help-section,
+    .help-cards-grid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}

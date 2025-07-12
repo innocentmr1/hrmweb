@@ -445,3 +445,42 @@
     color: #049fff;
     box-shadow: 0 4px 6px rgba(15, 15, 15, 0.16);
 }
+
+.footer-main,
+.footer-links,
+.footer-offices,
+.footer-bottom,
+.footer-bottom-content,
+.footer-legal,
+.seamless-footer,
+.footer__container,
+.footer__top,
+.footer__links,
+.footer__brand,
+.footer__bottom {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+@media (max-width: 600px) {
+
+    .footer-main,
+    .footer-links,
+    .footer-offices,
+    .footer-bottom,
+    .footer-bottom-content,
+    .footer-legal,
+    .seamless-footer,
+    .footer__container,
+    .footer__top,
+    .footer__links,
+    .footer__brand,
+    .footer__bottom {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}
