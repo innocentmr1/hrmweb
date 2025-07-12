@@ -388,6 +388,12 @@ function Home() {
             >
               Request a Demo
             </Link>
+            <Link
+              to="/products"
+              className="home-hero__btn home-hero__btn--secondary"
+            >
+              Explore Products
+            </Link>
           </div>
         </div>
         <div
