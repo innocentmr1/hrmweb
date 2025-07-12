@@ -365,22 +365,31 @@
   .loader-screen.loader-screen--textonly {
     width: 100% !important;
     height: 100% !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
     left: 0 !important;
     top: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
     overflow: hidden !important;
+    position: fixed !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .loader-animated-text {
-    font-size: 2.2rem !important;
-    letter-spacing: 0.08em !important;
+    font-size: 2rem !important;
+    letter-spacing: 0.05em !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    max-width: 90vw !important;
   }
 
   .loader-sub-text {
     font-size: 1rem !important;
     margin-top: 1rem !important;
+    text-align: center !important;
+    word-break: break-word !important;
+    max-width: 90vw !important;
   }
 }
