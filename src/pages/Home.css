@@ -53,26 +53,51 @@
 }
 
 .home-hero__btn {
-    padding: 1rem 2.5rem;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    font-weight: 700;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 800;
     border: none;
     outline: none;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
-    box-shadow: 0 2px 12px rgba(0, 191, 174, 0.08);
+    position: relative;
+    overflow: hidden;
 }
 
 .home-hero__btn--primary {
-    background: #049fff;
+    background: linear-gradient(135deg, #049fff 0%, #003366 100%);
     color: #fff;
+    box-shadow: 0 8px 32px rgba(4, 159, 255, 0.3), 0 4px 16px rgba(0, 51, 102, 0.2);
+    transform: translateY(0);
 }
 
 .home-hero__btn--primary:hover {
-    background: #02273e;
+    background: linear-gradient(135deg, #003366 0%, #049fff 100%);
     color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(4, 159, 255, 0.4), 0 8px 24px rgba(0, 51, 102, 0.3);
+}
+
+.home-hero__btn--primary:active {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(4, 159, 255, 0.3), 0 4px 16px rgba(0, 51, 102, 0.2);
+}
+
+.home-hero__btn--primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.home-hero__btn--primary:hover::before {
+    left: 100%;
 }
 
 .home-hero__btn--secondary {
