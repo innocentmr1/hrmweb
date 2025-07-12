@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,11 +22,30 @@ function Navbar() {
     setProductsOpen((open) => !open);
   };
 
+  // Close mobile menu when clicking on any link
+  const handleMobileMenuClose = () => {
+    setMenuOpen(false);
+    setProductsOpen(false);
+  };
+
+  // Close mobile menu when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (menuOpen) {
+        setMenuOpen(false);
+        setProductsOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [menuOpen]);
+
   return (
     <nav className="navbar seamless-navbar">
       <div className="navbar__container">
         <div className="navbar__logo">
-          <Link to="/" className="navbar__link">
+          <Link to="/" className="navbar__link" onClick={handleMobileMenuClose}>
             <h2>TechPal</h2>
             {/* <img
               src="/logo.svg"
@@ -83,6 +102,7 @@ function Navbar() {
                 <NavLink
                   to="/hrms"
                   className="navbar__link navbar__link-underline"
+                  onClick={handleMobileMenuClose}
                 >
                   HRMS
                 </NavLink>
@@ -91,6 +111,7 @@ function Navbar() {
                 <NavLink
                   to="/performance"
                   className="navbar__link navbar__link-underline"
+                  onClick={handleMobileMenuClose}
                 >
                   {" "}
                   Performance
@@ -100,6 +121,7 @@ function Navbar() {
                 <NavLink
                   to="/payroll"
                   className="navbar__link navbar__link-underline"
+                  onClick={handleMobileMenuClose}
                 >
                   Payroll
                 </NavLink>
@@ -108,6 +130,7 @@ function Navbar() {
                 <NavLink
                   to="/employee-benefits"
                   className="navbar__link navbar__link-underline"
+                  onClick={handleMobileMenuClose}
                 >
                   Employee Benefits
                 </NavLink>
@@ -116,6 +139,7 @@ function Navbar() {
                 <NavLink
                   to="/recruitment"
                   className="navbar__link navbar__link-underline"
+                  onClick={handleMobileMenuClose}
                 >
                   Recruitment
                 </NavLink>
@@ -124,6 +148,7 @@ function Navbar() {
                 <NavLink
                   to="/time-management"
                   className="navbar__link navbar__link-underline"
+                  onClick={handleMobileMenuClose}
                 >
                   Time Management
                 </NavLink>
@@ -134,6 +159,7 @@ function Navbar() {
             <NavLink
               to="/about"
               className="navbar__link navbar__link-underline"
+              onClick={handleMobileMenuClose}
             >
               About
             </NavLink>
@@ -148,6 +174,7 @@ function Navbar() {
             <NavLink
               to="/pricing"
               className="navbar__link navbar__link-underline"
+              onClick={handleMobileMenuClose}
             >
               Pricing
             </NavLink>
@@ -157,6 +184,7 @@ function Navbar() {
             <NavLink
               to="/partnership"
               className="navbar__link navbar__link-underline"
+              onClick={handleMobileMenuClose}
             >
               Partnership
             </NavLink>
@@ -165,12 +193,17 @@ function Navbar() {
             <NavLink
               to="/contact"
               className="navbar__link navbar__link-underline"
+              onClick={handleMobileMenuClose}
             >
               Contact
             </NavLink>
           </li>
           <li className="navbar__mobile-demo">
-            <Link to="/request-demo" className="navbar__demo-btn navbar__link">
+            <Link
+              to="/request-demo"
+              className="navbar__demo-btn navbar__link"
+              onClick={handleMobileMenuClose}
+            >
               Request a Demo
             </Link>
           </li>
