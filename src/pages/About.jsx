@@ -2,306 +2,186 @@ import { Link } from "react-router-dom";
 import "./About.css";
 
 function About() {
+  // Demo team
   const teamMembers = [
     {
       name: "Sarah Johnson",
       role: "CEO & Founder",
-      image: "👩‍💼",
-      bio: "Passionate about transforming HR technology and empowering businesses.",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      quote: "People are our greatest asset.",
     },
     {
       name: "Michael Chen",
       role: "CTO",
-      image: "👨‍💻",
-      bio: "Leading our technical innovation and product development.",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      quote: "Innovation drives everything we do.",
     },
     {
       name: "Emily Rodriguez",
       role: "Head of Product",
-      image: "👩‍🎨",
-      bio: "Creating user-centric solutions that drive business success.",
+      image: "https://randomuser.me/api/portraits/women/68.jpg",
+      quote: "User experience is at the heart of our platform.",
     },
     {
       name: "David Kim",
-      role: "Head of Sales",
-      image: "👨‍💼",
-      bio: "Building lasting partnerships with our valued clients.",
+      role: "Head of People",
+      image: "https://randomuser.me/api/portraits/men/65.jpg",
+      quote: "We build workplaces where everyone can thrive.",
     },
   ];
-
+  // Demo stats
+  const stats = [
+    { icon: "👥", value: "10,000+", label: "Employees Managed" },
+    { icon: "🏢", value: "200+", label: "Companies Served" },
+    { icon: "🌍", value: "15+", label: "Countries" },
+    { icon: "⭐", value: "99%", label: "Client Satisfaction" },
+  ];
+  // Demo testimonials
+  const testimonials = [
+    {
+      text: "TechPal HR transformed our onboarding process and made compliance effortless!",
+      name: "Jane Doe",
+      role: "HR Director, Acme Corp",
+      image: "https://randomuser.me/api/portraits/women/50.jpg",
+    },
+    {
+      text: "Our team loves the intuitive interface and powerful analytics.",
+      name: "John Smith",
+      role: "COO, Beta Inc",
+      image: "https://randomuser.me/api/portraits/men/51.jpg",
+    },
+  ];
+  // Demo client logos
+  const clientLogos = [
+    "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+  ];
+  // Demo values
   const values = [
     {
+      icon: "💡",
       title: "Innovation",
-      description:
-        "Constantly pushing boundaries to create cutting-edge HR solutions.",
-      icon: "🚀",
+      desc: "We build cutting-edge HR solutions.",
     },
     {
-      title: "Excellence",
-      description:
-        "Delivering the highest quality products and services to our clients.",
-      icon: "⭐",
-    },
-    {
-      title: "Integrity",
-      description:
-        "Operating with transparency, honesty, and ethical business practices.",
       icon: "🤝",
+      title: "People First",
+      desc: "We put people at the center of everything.",
     },
     {
-      title: "Customer Success",
-      description:
-        "Putting our customers first and ensuring their success is our priority.",
-      icon: "🎯",
-    },
-  ];
-
-  const milestones = [
-    {
-      year: "2018",
-      title: "Company Founded",
-      description: "Started with a vision to revolutionize HR technology.",
+      icon: "🔒",
+      title: "Trust",
+      desc: "Your data and privacy are our top priority.",
     },
     {
-      year: "2019",
-      title: "First Product Launch",
-      description: "Successfully launched our flagship HRMS platform.",
-    },
-    {
-      year: "2020",
-      title: "Global Expansion",
-      description: "Expanded operations to multiple countries across Africa.",
-    },
-    {
-      year: "2021",
-      title: "Series A Funding",
-      description: "Secured $10M in funding to accelerate growth.",
-    },
-    {
-      year: "2022",
-      title: "1000+ Customers",
-      description: "Reached milestone of serving over 1000 businesses.",
-    },
-    {
-      year: "2023",
-      title: "Market Leader",
-      description: "Recognized as the leading HR tech platform in Africa.",
+      icon: "🌱",
+      title: "Growth",
+      desc: "We help businesses and people grow together.",
     },
   ];
 
   return (
-    <div className="about-page">
+    <div className="about-modern-page">
       {/* Hero Section */}
-      <section className="about-hero">
-        <div className="about-hero__content">
-          <h1 className="about-hero__title">Our Story</h1>
-          <p className="about-hero__subtitle">
-            Learn how our passion for human productivity drives our mission and
-            values.
+      <section className="about-hero-modern">
+        <div className="about-hero-modern__bg" />
+        <div className="about-hero-modern__content">
+          <h1>Empowering People. Transforming Work.</h1>
+          <p>
+            TechPal HR is the modern HR platform for growing teams. We help you
+            manage people, payroll, and performance—all in one place.
           </p>
+          <Link to="/contact" className="about-hero-modern__cta">
+            Request a Demo
+          </Link>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="mission-section">
-        <div className="mission-content">
-          <div className="mission-text">
-            <h2>Our Mission</h2>
-            <p>
-              To empower businesses across Africa and beyond with innovative HR
-              technology that streamlines operations, enhances employee
-              experience, and drives organizational success. We believe that
-              every business deserves access to world-class HR solutions that
-              enable them to focus on what matters most - their people and their
-              growth.
-            </p>
-          </div>
-          <div className="mission-visual">
-            <div className="mission-animation">
-              <div className="mission-circle mission-circle--1"></div>
-              <div className="mission-circle mission-circle--2"></div>
-              <div className="mission-circle mission-circle--3"></div>
-            </div>
-          </div>
+      {/* Mission Section (Full-Width Banner) */}
+      <section className="about-mission-banner">
+        <div className="about-mission-banner__bg" />
+        <div className="about-mission-banner__content">
+          <h2>Our Mission</h2>
+          <p>
+            We exist to make work more human. Our mission is to empower every
+            organization to build a workplace where people thrive.
+          </p>
+          <span className="about-mission-banner__quote">
+            “Empowering People. Transforming Work.”
+          </span>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="values-section">
-        <h2 className="values-title">Our Values</h2>
-        <div className="values-grid">
-          {values.map((value, index) => (
-            <div
-              key={value.title}
-              className="value-card"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="value-icon">{value.icon}</div>
-              <h3>{value.title}</h3>
-              <p>{value.description}</p>
-            </div>
-          ))}
-        </div>
+      {/* Stats/Impact Section */}
+      <section className="about-stats-modern">
+        {stats.map((s) => (
+          <div className="about-stat-modern" key={s.label}>
+            <span className="about-stat-modern__icon">{s.icon}</span>
+            <div className="about-stat-modern__value">{s.value}</div>
+            <div className="about-stat-modern__label">{s.label}</div>
+          </div>
+        ))}
       </section>
 
       {/* Team Section */}
-      <section className="team-section">
-        <h2 className="team-title">Meet Our Leadership Team</h2>
-        <div className="team-grid">
-          {teamMembers.map((member, index) => (
-            <div
-              key={member.name}
-              className="team-card"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="team-card__image">{member.image}</div>
-              <h3 className="team-card__name">{member.name}</h3>
-              <p className="team-card__role">{member.role}</p>
-              <p className="team-card__bio">{member.bio}</p>
+      <section className="about-team-modern">
+        <h2>Meet Our Team</h2>
+        <div className="about-team-modern__grid">
+          {teamMembers.map((m) => (
+            <div className="about-team-modern__card" key={m.name}>
+              <img src={m.image} alt={m.name} />
+              <h4>{m.name}</h4>
+              <div className="about-team-modern__role">{m.role}</div>
+              <div className="about-team-modern__quote">“{m.quote}”</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Milestones Section */}
-      <section className="milestones-section">
-        <h2 className="milestones-title">Our Journey</h2>
-        <div className="timeline">
-          {milestones.map((milestone, index) => (
-            <div
-              key={milestone.year}
-              className="timeline-item"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <div className="timeline-year">{milestone.year}</div>
-                <h3>{milestone.title}</h3>
-                <p>{milestone.description}</p>
+      {/* Trusted By Section */}
+      <section className="about-clients-modern">
+        <div className="about-clients-modern__title">
+          Trusted by leading companies
+        </div>
+        <div className="about-clients-modern__logos">
+          {clientLogos.map((logo, i) => (
+            <img src={logo} alt="Client logo" key={i} />
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="about-testimonials-modern">
+        <h2>What Our Clients Say</h2>
+        <div className="about-testimonials-modern__grid">
+          {testimonials.map((t, i) => (
+            <div className="about-testimonials-modern__card" key={i}>
+              <div className="about-testimonials-modern__text">“{t.text}”</div>
+              <div className="about-testimonials-modern__person">
+                <img src={t.image} alt={t.name} />
+                <div>
+                  <div className="about-testimonials-modern__name">
+                    {t.name}
+                  </div>
+                  <div className="about-testimonials-modern__role">
+                    {t.role}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Careers Section */}
-      <section id="careers" className="careers-section">
-        <div className="careers-content">
-          <h2>Join Our Team</h2>
-          <p>
-            We're always looking for talented individuals who are passionate
-            about technology and making a difference in the HR space. Join us in
-            our mission to transform how businesses manage their human
-            resources.
-          </p>
-          <div className="careers-grid">
-            <div className="career-card">
-              <h3>Software Engineer</h3>
-              <p>
-                Build innovative HR solutions that impact thousands of
-                businesses.
-              </p>
-              <Link to="/contact" className="career-btn">
-                Apply Now
-              </Link>
-            </div>
-            <div className="career-card">
-              <h3>Product Manager</h3>
-              <p>
-                Shape the future of HR technology with user-centric product
-                design.
-              </p>
-              <Link to="/contact" className="career-btn">
-                Apply Now
-              </Link>
-            </div>
-            <div className="career-card">
-              <h3>Sales Representative</h3>
-              <p>Help businesses discover the power of our HR solutions.</p>
-              <Link to="/contact" className="career-btn">
-                Apply Now
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Press Section */}
-      <section id="press" className="press-section">
-        <h2>Press & Media</h2>
-        <div className="press-grid">
-          <div className="press-item">
-            <h3>HRMPro Raises $10M in Series A Funding</h3>
-            <p>TechCrunch - March 2023</p>
-            <Link to="/contact" className="press-link">
-              Read More →
-            </Link>
-          </div>
-          <div className="press-item">
-            <h3>Leading HR Tech Platform Expands to 5 New Countries</h3>
-            <p>Business Insider - January 2023</p>
-            <Link to="/contact" className="press-link">
-              Read More →
-            </Link>
-          </div>
-          <div className="press-item">
-            <h3>HRMPro Named Best HR Software 2023</h3>
-            <p>HR Tech Weekly - December 2022</p>
-            <Link to="/contact" className="press-link">
-              Read More →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Social Impact Section */}
-      <section id="impact" className="impact-section">
-        <div className="impact-content">
-          <h2>SeamlessForGood</h2>
-          <h3>Driving Productivity & Transforming Communities</h3>
-          <p>
-            Through our SeamlessForGood initiative, we're committed to making a
-            positive impact in the communities we serve. We partner with
-            educational institutions, provide technology training, and support
-            local businesses in their digital transformation journey.
-          </p>
-          <div className="impact-stats">
-            <div className="impact-stat">
-              <div className="stat-number">500+</div>
-              <div className="stat-label">Students Trained</div>
-            </div>
-            <div className="impact-stat">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Schools Supported</div>
-            </div>
-            <div className="impact-stat">
-              <div className="stat-number">$2M+</div>
-              <div className="stat-label">Community Investment</div>
-            </div>
-          </div>
-          <Link to="/contact" className="impact-btn">
-            Learn More
-          </Link>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="about-cta">
-        <div className="about-cta__content">
-          <h2>Ready to Join Our Mission?</h2>
-          <p>
-            Get in touch to learn more about our company, careers, or
-            partnership opportunities.
-          </p>
-          <div className="about-cta__buttons">
-            <Link to="/contact" className="cta-primary">
-              Contact Us
-            </Link>
-            <Link to="/partnership" className="cta-secondary">
-              Partnership
-            </Link>
-          </div>
-        </div>
+      {/* Call to Action */}
+      <section className="about-cta-modern">
+        <h2>Ready to build a better workplace?</h2>
+        <Link to="/contact" className="about-cta-modern__btn">
+          Get in Touch
+        </Link>
       </section>
     </div>
   );

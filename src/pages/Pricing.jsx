@@ -99,12 +99,6 @@ function Pricing() {
               </div>
               <div className="pricing-header">
                 <h3 className="pricing-name">{plan.name}</h3>
-                <div className="pricing-price">
-                  <span className="price-amount">{plan.price}</span>
-                  {plan.period && (
-                    <span className="price-period">/{plan.period}</span>
-                  )}
-                </div>
                 <p className="pricing-description">{plan.description}</p>
               </div>
               <ul className="pricing-features">
