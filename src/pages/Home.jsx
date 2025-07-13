@@ -382,6 +382,39 @@ function Home() {
     return () => clearInterval(interval);
   }, [windowWidth, products.length]);
 
+  // Swipe support for product slider
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
+  const handleTouchStart = (e) => {
+    if (windowWidth > 700) return;
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    if (windowWidth > 700) return;
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (windowWidth > 700) return;
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const delta = touchStartX.current - touchEndX.current;
+    if (Math.abs(delta) > 40) {
+      if (delta > 0) {
+        // Swipe left
+        setProductSlide((prev) => (prev + 1) % products.length);
+      } else {
+        // Swipe right
+        setProductSlide(
+          (prev) => (prev - 1 + products.length) % products.length
+        );
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <div className="home seamless-home">
       {/* Hero Section */}
@@ -498,7 +531,13 @@ function Home() {
         <h2 className="home-products__title">
           All Your HR Needs, One Platform
         </h2>
-        <div className="home-products__grid" ref={productsGridRef}>
+        <div
+          className="home-products__grid"
+          ref={productsGridRef}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {windowWidth <= 700
             ? [products[productSlide]].map((product) => (
                 <div className="home-product-card" key={product.id}>
