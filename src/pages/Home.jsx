@@ -575,6 +575,27 @@ function Home() {
                 </div>
               ))}
         </div>
+        {/* Navigation dots for mobile */}
+        {windowWidth <= 700 && (
+          <div className="home-products__dots">
+            {products.map((_, idx) => (
+              <button
+                key={idx}
+                className={`home-products__dot${
+                  productSlide === idx ? " home-products__dot--active" : ""
+                }`}
+                onClick={() => setProductSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                style={{
+                  outline: "none",
+                  border: "none",
+                  padding: 0,
+                  margin: 0,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Feature Highlights Section */}
