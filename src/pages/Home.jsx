@@ -382,20 +382,6 @@ function Home() {
     return () => clearInterval(interval);
   }, [windowWidth, products.length]);
 
-  useEffect(() => {
-    if (windowWidth > 700) return;
-    if (!productsGridRef.current) return;
-    const grid = productsGridRef.current;
-    const card = grid.children[productSlide];
-    if (card) {
-      card.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-      });
-    }
-  }, [productSlide, windowWidth]);
-
   return (
     <div className="home seamless-home">
       {/* Hero Section */}
