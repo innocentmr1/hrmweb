@@ -369,6 +369,33 @@ function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  const isMobileTrusted = windowWidth <= 700;
+
+  const productsGridRef = useRef();
+  const [productSlide, setProductSlide] = useState(0);
+
+  useEffect(() => {
+    if (windowWidth > 700) return;
+    const interval = setInterval(() => {
+      setProductSlide((prev) => (prev + 1) % products.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [windowWidth, products.length]);
+
+  useEffect(() => {
+    if (windowWidth > 700) return;
+    if (!productsGridRef.current) return;
+    const grid = productsGridRef.current;
+    const card = grid.children[productSlide];
+    if (card) {
+      card.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest",
+      });
+    }
+  }, [productSlide, windowWidth]);
+
   return (
     <div className="home seamless-home">
       {/* Hero Section */}
@@ -446,7 +473,17 @@ function Home() {
             Trusted by leading companies
           </span>
           <div className="home-trusted__logos-slider-modern">
-            <div className="home-trusted__logos-track-modern">
+            <div
+              className="home-trusted__logos-track-modern"
+              style={
+                isMobileTrusted
+                  ? {
+                      animation:
+                        "trusted-modern-slide-left-mobile 18s linear infinite",
+                    }
+                  : {}
+              }
+            >
               {[...trustedCompanies, ...trustedCompanies].map(
                 (company, idx) => (
                   <a
@@ -475,7 +512,7 @@ function Home() {
         <h2 className="home-products__title">
           All Your HR Needs, One Platform
         </h2>
-        <div className="home-products__grid">
+        <div className="home-products__grid" ref={productsGridRef}>
           {products.map((product) => (
             <div className="home-product-card" key={product.id}>
               <div

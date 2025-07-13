@@ -186,6 +186,10 @@
     box-shadow: 0 4px 6px rgba(15, 15, 15, 0.16);
 }
 
+.navbar__mobile-demo {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .navbar__container {
         padding: 0.5rem 1rem;

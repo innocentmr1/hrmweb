@@ -104,8 +104,8 @@ function About() {
       <section className="about-mission-banner">
         <div className="about-mission-banner__bg" />
         <div className="about-mission-banner__content">
-          <h2>Our Mission</h2>
-          <p>
+            <h2>Our Mission</h2>
+            <p>
             We exist to make work more human. Our mission is to empower every
             organization to build a workplace where people thrive.
           </p>
@@ -122,8 +122,8 @@ function About() {
             <span className="about-stat-modern__icon">{s.icon}</span>
             <div className="about-stat-modern__value">{s.value}</div>
             <div className="about-stat-modern__label">{s.label}</div>
-          </div>
-        ))}
+            </div>
+          ))}
       </section>
 
       {/* Team Section */}
@@ -145,7 +145,7 @@ function About() {
       <section className="about-clients-modern">
         <div className="about-clients-modern__title">
           Trusted by leading companies
-        </div>
+              </div>
         <div className="about-clients-modern__logos">
           {clientLogos.map((logo, i) => (
             <img src={logo} alt="Client logo" key={i} />
@@ -165,12 +165,12 @@ function About() {
                 <div>
                   <div className="about-testimonials-modern__name">
                     {t.name}
-                  </div>
+            </div>
                   <div className="about-testimonials-modern__role">
                     {t.role}
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
+        </div>
             </div>
           ))}
         </div>
@@ -181,7 +181,7 @@ function About() {
         <h2>Ready to build a better workplace?</h2>
         <Link to="/contact" className="about-cta-modern__btn">
           Get in Touch
-        </Link>
+            </Link>
       </section>
     </div>
   );
