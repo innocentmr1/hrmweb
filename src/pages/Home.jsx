@@ -832,24 +832,35 @@ function Home() {
               </div>
             </div>
             <div className="home-case-carousel__dots" style={{ marginTop: 12 }}>
-              {stories.map((_, idx) => (
-                <button
-                  key={idx}
-                  className={`home-case-carousel__dot${
-                    mobileStory === idx
-                      ? " home-case-carousel__dot--active"
-                      : ""
-                  }`}
-                  onClick={() => setMobileStory(idx)}
-                  aria-label={`Go to story ${idx + 1}`}
-                  style={{
-                    outline: "none",
-                    border: "none",
-                    padding: 0,
-                    margin: 0,
-                  }}
-                />
-              ))}
+              {(() => {
+                const total = stories.length;
+                const maxDots = 4;
+                let start = Math.max(0, mobileStory - Math.floor(maxDots / 2));
+                if (start + maxDots > total)
+                  start = Math.max(0, total - maxDots);
+                const end = Math.min(total, start + maxDots);
+                return stories.slice(start, end).map((_, idx) => {
+                  const realIdx = start + idx;
+                  return (
+                    <button
+                      key={realIdx}
+                      className={`home-case-carousel__dot${
+                        mobileStory === realIdx
+                          ? " home-case-carousel__dot--active"
+                          : ""
+                      }`}
+                      onClick={() => setMobileStory(realIdx)}
+                      aria-label={`Go to story ${realIdx + 1}`}
+                      style={{
+                        outline: "none",
+                        border: "none",
+                        padding: 0,
+                        margin: 0,
+                      }}
+                    />
+                  );
+                });
+              })()}
             </div>
           </div>
         ) : (
