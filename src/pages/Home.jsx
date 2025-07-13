@@ -499,39 +499,81 @@ function Home() {
           All Your HR Needs, One Platform
         </h2>
         <div className="home-products__grid" ref={productsGridRef}>
-          {products.map((product) => (
-            <div className="home-product-card" key={product.id}>
-              <div
-                className="home-product-card__icon"
-                style={{ backgroundColor: product.color }}
-              >
-                {product.icon}
-              </div>
-              <h3 className="home-product-card__title">{product.title}</h3>
-              <p className="home-product-card__subtitle">{product.subtitle}</p>
-              <p className="home-product-card__desc">{product.description}</p>
-              <Link
-                to={
-                  product.id === "hrms"
-                    ? "/hrms"
-                    : product.id === "payroll"
-                    ? "/payroll"
-                    : product.id === "performance"
-                    ? "/performance"
-                    : product.id === "recruitment"
-                    ? "/recruitment"
-                    : product.id === "time"
-                    ? "/time-management"
-                    : product.id === "benefits"
-                    ? "/employee-benefits"
-                    : `/products#${product.id}`
-                }
-                className="home-product-card__link"
-              >
-                Learn More →
-              </Link>
-            </div>
-          ))}
+          {windowWidth <= 700
+            ? [products[productSlide]].map((product) => (
+                <div className="home-product-card" key={product.id}>
+                  <div
+                    className="home-product-card__icon"
+                    style={{ backgroundColor: product.color }}
+                  >
+                    {product.icon}
+                  </div>
+                  <h3 className="home-product-card__title">{product.title}</h3>
+                  <p className="home-product-card__subtitle">
+                    {product.subtitle}
+                  </p>
+                  <p className="home-product-card__desc">
+                    {product.description}
+                  </p>
+                  <Link
+                    to={
+                      product.id === "hrms"
+                        ? "/hrms"
+                        : product.id === "payroll"
+                        ? "/payroll"
+                        : product.id === "performance"
+                        ? "/performance"
+                        : product.id === "recruitment"
+                        ? "/recruitment"
+                        : product.id === "time"
+                        ? "/time-management"
+                        : product.id === "benefits"
+                        ? "/employee-benefits"
+                        : `/products#${product.id}`
+                    }
+                    className="home-product-card__link"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              ))
+            : products.map((product) => (
+                <div className="home-product-card" key={product.id}>
+                  <div
+                    className="home-product-card__icon"
+                    style={{ backgroundColor: product.color }}
+                  >
+                    {product.icon}
+                  </div>
+                  <h3 className="home-product-card__title">{product.title}</h3>
+                  <p className="home-product-card__subtitle">
+                    {product.subtitle}
+                  </p>
+                  <p className="home-product-card__desc">
+                    {product.description}
+                  </p>
+                  <Link
+                    to={
+                      product.id === "hrms"
+                        ? "/hrms"
+                        : product.id === "payroll"
+                        ? "/payroll"
+                        : product.id === "performance"
+                        ? "/performance"
+                        : product.id === "recruitment"
+                        ? "/recruitment"
+                        : product.id === "time"
+                        ? "/time-management"
+                        : product.id === "benefits"
+                        ? "/employee-benefits"
+                        : `/products#${product.id}`
+                    }
+                    className="home-product-card__link"
+                  >
+                    Learn More →
+                  </Link>
+                </div>
+              ))}
         </div>
       </section>
 
