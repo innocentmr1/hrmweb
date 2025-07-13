@@ -845,7 +845,6 @@ function Home() {
                   style={{
                     outline: "none",
                     border: "none",
-                    background: "none",
                     padding: 0,
                     margin: 0,
                   }}
