@@ -426,6 +426,37 @@ function Home() {
     return () => clearInterval(interval);
   }, [windowWidth, stories.length]);
 
+  // Swipe support for mobile customer stories
+  const mobileTouchStartX = useRef(null);
+  const mobileTouchEndX = useRef(null);
+
+  const handleMobileTouchStart = (e) => {
+    if (windowWidth > 700) return;
+    mobileTouchStartX.current = e.touches[0].clientX;
+    mobileTouchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleMobileTouchMove = (e) => {
+    if (windowWidth > 700) return;
+    mobileTouchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleMobileTouchEnd = () => {
+    if (windowWidth > 700) return;
+    if (mobileTouchStartX.current === null || mobileTouchEndX.current === null)
+      return;
+    const delta = mobileTouchStartX.current - mobileTouchEndX.current;
+    if (Math.abs(delta) > 40) {
+      if (delta > 0) {
+        setMobileStory((prev) => (prev + 1) % stories.length);
+      } else {
+        setMobileStory((prev) => (prev - 1 + stories.length) % stories.length);
+      }
+    }
+    mobileTouchStartX.current = null;
+    mobileTouchEndX.current = null;
+  };
+
   return (
     <div className="home seamless-home">
       {/* Hero Section */}
@@ -753,7 +784,12 @@ function Home() {
           Customer Success Stories
         </h2>
         {windowWidth <= 700 ? (
-          <div className="home-case-carousel home-case-carousel--mobile">
+          <div
+            className="home-case-carousel home-case-carousel--mobile"
+            onTouchStart={handleMobileTouchStart}
+            onTouchMove={handleMobileTouchMove}
+            onTouchEnd={handleMobileTouchEnd}
+          >
             <div
               className="home-case-card home-case-card--active"
               style={{
@@ -830,37 +866,6 @@ function Home() {
                   {stories[mobileStory].company}
                 </div>
               </div>
-            </div>
-            <div className="home-case-carousel__dots" style={{ marginTop: 12 }}>
-              {(() => {
-                const total = stories.length;
-                const maxDots = 4;
-                let start = Math.max(0, mobileStory - Math.floor(maxDots / 2));
-                if (start + maxDots > total)
-                  start = Math.max(0, total - maxDots);
-                const end = Math.min(total, start + maxDots);
-                return stories.slice(start, end).map((_, idx) => {
-                  const realIdx = start + idx;
-                  return (
-                    <button
-                      key={realIdx}
-                      className={`home-case-carousel__dot${
-                        mobileStory === realIdx
-                          ? " home-case-carousel__dot--active"
-                          : ""
-                      }`}
-                      onClick={() => setMobileStory(realIdx)}
-                      aria-label={`Go to story ${realIdx + 1}`}
-                      style={{
-                        outline: "none",
-                        border: "none",
-                        padding: 0,
-                        margin: 0,
-                      }}
-                    />
-                  );
-                });
-              })()}
             </div>
           </div>
         ) : (
