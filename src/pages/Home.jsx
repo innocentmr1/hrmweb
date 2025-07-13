@@ -414,6 +414,18 @@ function Home() {
     touchEndX.current = null;
   };
 
+  // Add state for mobile story index
+  const [mobileStory, setMobileStory] = useState(0);
+
+  // Auto-advance on mobile
+  useEffect(() => {
+    if (windowWidth > 700) return;
+    const interval = setInterval(() => {
+      setMobileStory((prev) => (prev + 1) % stories.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [windowWidth, stories.length]);
+
   return (
     <div className="home seamless-home">
       {/* Hero Section */}
@@ -740,78 +752,181 @@ function Home() {
         <h2 className="home-case-studies__title fade-in-up">
           Customer Success Stories
         </h2>
-        <div
-          className="home-case-carousel home-case-carousel--manual"
-          ref={carouselRef}
-        >
-          <button
-            className="home-case-carousel__arrow left"
-            onClick={goLeft}
-            aria-label="Previous"
-          >
-            &#8592;
-          </button>
-          <div className="home-case-carousel__track home-case-carousel__track--manual">
-            {stories
-              .slice(carouselCurrent, carouselCurrent + cardsToShow)
-              .map((story, idx) => (
+        {windowWidth <= 700 ? (
+          <div className="home-case-carousel home-case-carousel--mobile">
+            <div
+              className="home-case-card home-case-card--active"
+              style={{
+                minWidth: "96vw",
+                maxWidth: "96vw",
+                margin: "0 auto",
+                borderRadius: 18,
+                boxShadow: "0 4px 18px rgba(4,159,255,0.08)",
+                padding: "2rem 1.1rem 1.2rem 1.1rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+                gap: "0.7rem",
+              }}
+            >
+              <img
+                className="home-case-card__image"
+                src={stories[mobileStory].avatar}
+                alt="Customer"
+                style={{ width: 80, height: 80, marginBottom: 12 }}
+              />
+              <div
+                className="home-case-card__name"
+                style={{ fontSize: "1.15rem", marginBottom: 2 }}
+              >
+                {stories[mobileStory].linkedin ? (
+                  <a
+                    href={stories[mobileStory].linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="home-case-card__linkedin-name"
+                    title="View LinkedIn profile"
+                    style={{
+                      color: "#0077b5",
+                      textDecoration: "none",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {stories[mobileStory].name}
+                  </a>
+                ) : (
+                  stories[mobileStory].name
+                )}
+              </div>
+              <div
+                className="home-case-card__quote"
+                style={{
+                  fontSize: "1.08rem",
+                  fontStyle: "italic",
+                  padding: "0.7rem 0.5rem 0.5rem 0.5rem",
+                }}
+              >
+                "{stories[mobileStory].quote}"
+              </div>
+              <div
+                className="home-case-card__meta"
+                style={{ justifyContent: "center", marginTop: 2 }}
+              >
+                <img
+                  className="home-case-card__logo"
+                  src={stories[mobileStory].logo}
+                  alt="Company Logo"
+                  style={{ width: 28, height: 28 }}
+                />
                 <div
-                  className="home-case-card fade-in-up home-case-card--active"
-                  key={story.name + idx}
+                  className="home-case-card__company"
                   style={{
-                    minWidth: isMobile ? "90%" : "45%",
-                    maxWidth: isMobile ? "90%" : "45%",
-                    margin: "0 1.5%",
-                    flex: "0 0 auto",
+                    fontSize: "1.01rem",
+                    color: "#003366",
+                    fontWeight: 500,
                   }}
                 >
-                  <img
-                    className="home-case-card__image"
-                    src={story.avatar}
-                    alt="Customer"
-                  />
-                  <div className="home-case-card__name">
-                    {story.linkedin ? (
-                      <a
-                        href={story.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="home-case-card__linkedin-name"
-                        title="View LinkedIn profile"
-                        style={{
-                          color: "#0077b5",
-                          textDecoration: "none",
-                          fontWeight: 600,
-                        }}
-                      >
-                        {story.name}
-                      </a>
-                    ) : (
-                      story.name
-                    )}
-                  </div>
-                  <div className="home-case-card__quote">"{story.quote}"</div>
-                  <div className="home-case-card__meta">
+                  {stories[mobileStory].company}
+                </div>
+              </div>
+            </div>
+            <div className="home-case-carousel__dots" style={{ marginTop: 12 }}>
+              {stories.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`home-case-carousel__dot${
+                    mobileStory === idx
+                      ? " home-case-carousel__dot--active"
+                      : ""
+                  }`}
+                  onClick={() => setMobileStory(idx)}
+                  aria-label={`Go to story ${idx + 1}`}
+                  style={{
+                    outline: "none",
+                    border: "none",
+                    background: "none",
+                    padding: 0,
+                    margin: 0,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div
+            className="home-case-carousel home-case-carousel--manual"
+            ref={carouselRef}
+          >
+            <button
+              className="home-case-carousel__arrow left"
+              onClick={goLeft}
+              aria-label="Previous"
+            >
+              &#8592;
+            </button>
+            <div className="home-case-carousel__track home-case-carousel__track--manual">
+              {stories
+                .slice(carouselCurrent, carouselCurrent + cardsToShow)
+                .map((story, idx) => (
+                  <div
+                    className="home-case-card fade-in-up home-case-card--active"
+                    key={story.name + idx}
+                    style={{
+                      minWidth: isMobile ? "90%" : "45%",
+                      maxWidth: isMobile ? "90%" : "45%",
+                      margin: "0 1.5%",
+                      flex: "0 0 auto",
+                    }}
+                  >
                     <img
-                      className="home-case-card__logo"
-                      src={story.logo}
-                      alt="Company Logo"
+                      className="home-case-card__image"
+                      src={story.avatar}
+                      alt="Customer"
                     />
-                    <div className="home-case-card__company">
-                      {story.company}
+                    <div className="home-case-card__name">
+                      {story.linkedin ? (
+                        <a
+                          href={story.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="home-case-card__linkedin-name"
+                          title="View LinkedIn profile"
+                          style={{
+                            color: "#0077b5",
+                            textDecoration: "none",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {story.name}
+                        </a>
+                      ) : (
+                        story.name
+                      )}
+                    </div>
+                    <div className="home-case-card__quote">"{story.quote}"</div>
+                    <div className="home-case-card__meta">
+                      <img
+                        className="home-case-card__logo"
+                        src={story.logo}
+                        alt="Company Logo"
+                      />
+                      <div className="home-case-card__company">
+                        {story.company}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+            </div>
+            <button
+              className="home-case-carousel__arrow right"
+              onClick={goRight}
+              aria-label="Next"
+            >
+              &#8594;
+            </button>
           </div>
-          <button
-            className="home-case-carousel__arrow right"
-            onClick={goRight}
-            aria-label="Next"
-          >
-            &#8594;
-          </button>
-        </div>
+        )}
       </section>
 
       {/* CTA Section */}
