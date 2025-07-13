@@ -446,22 +446,20 @@
     box-shadow: 0 4px 6px rgba(15, 15, 15, 0.16);
 }
 
+/* Allow footer content to flow and wrap naturally, do not hide overflow or restrict max-width */
+.footer,
 .footer-main,
-.footer-links,
-.footer-offices,
 .footer-bottom,
-.footer-bottom-content,
-.footer-legal,
-.seamless-footer,
 .footer__container,
 .footer__top,
+.footer__bottom,
+.seamless-footer,
 .footer__links,
-.footer__brand,
-.footer__bottom {
-    max-width: 100%;
+.footer__section {
+    max-width: none !important;
+    overflow-x: visible !important;
+    overflow: visible !important;
     width: 100%;
-    box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 @media (max-width: 600px) {
@@ -483,4 +481,19 @@
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
+}
+
+/* Remove fixed heights and overflow from footer sections to prevent independent scrolling */
+.footer,
+.footer-main,
+.footer-bottom,
+.footer__container,
+.footer__top,
+.footer__bottom,
+.seamless-footer {
+    min-height: unset !important;
+    height: auto !important;
+    overflow: unset !important;
+    overflow-y: unset !important;
+    overflow-x: unset !important;
 }

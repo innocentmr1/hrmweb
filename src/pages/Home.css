@@ -1576,3 +1576,19 @@ body,
         color: #fff !important;
     }
 }
+
+/* Remove fixed heights and overflow from main sections to prevent independent scrolling */
+.home-hero,
+.home-hero__content,
+.home-hero__visual,
+.home-products,
+.home-features,
+.home-case-studies,
+.home-cta,
+.home-footer {
+    min-height: unset !important;
+    height: auto !important;
+    overflow: unset !important;
+    overflow-y: unset !important;
+    overflow-x: unset !important;
+}
