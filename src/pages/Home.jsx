@@ -389,6 +389,7 @@ function Home() {
   const handleTouchStart = (e) => {
     if (windowWidth > 700) return;
     touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = e.touches[0].clientX;
   };
 
   const handleTouchMove = (e) => {
@@ -402,10 +403,8 @@ function Home() {
     const delta = touchStartX.current - touchEndX.current;
     if (Math.abs(delta) > 40) {
       if (delta > 0) {
-        // Swipe left
         setProductSlide((prev) => (prev + 1) % products.length);
       } else {
-        // Swipe right
         setProductSlide(
           (prev) => (prev - 1 + products.length) % products.length
         );
@@ -527,7 +526,11 @@ function Home() {
       </section>
 
       {/* Product Overview Section */}
-      <section className="home-products fade-in-up-scroll">
+      <section
+        className={`home-products${
+          windowWidth > 700 ? " fade-in-up-scroll" : ""
+        }`}
+      >
         <h2 className="home-products__title">
           All Your HR Needs, One Platform
         </h2>
